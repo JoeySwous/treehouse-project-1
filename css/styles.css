@@ -1,4 +1,4 @@
-/** 
+/**
  * Treehouse FSJS Techdegree
  * Random Quote Generator - CSS
  */
@@ -110,6 +110,15 @@ h1 {
   font-style: normal;
 }
 
+.tags {
+  font-style: italic;
+}
+
+.tags:before {
+  content: ", ";
+  font-style: normal;
+}
+
 .year:before {
   content: ", ";
   font-style: normal;
@@ -164,3 +173,4 @@ h1 {
     font-size: 1.25rem;
   }
 }
+

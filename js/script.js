@@ -13,17 +13,19 @@ let displayInterval;
 let quotes = [
   {
     quote:'The medicine for my suffering I had within me from the very beginning but I did not take it. My ailment came from within myself, but I did not observe it until this moment. Now I see I will never find the light unless, like a candle, I am my own fuel.',
-    source:'Bruce Lee'
+    source:'Bruce Lee',
+    tags:'Wise'
   },
   {
     quote:'Chemistry is a class you take in high school or college, where you figure out two plus two is 10, or something.',
-    source:'Dennis Rodman'
+    source:'Dennis Rodman',
+    tags:'Humor'
   },
   {
     quote:'If you believe in yourself, with a tiny pinch of magic all your dreams can come true!',
     source:'Spongebob Squarepants',
     citation: 'Spongebob Squarepants S1 E10 F.U.N.',
-    year:'1999'
+    year:'1999',
   },
   {
     quote:'The only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven\'t found it yet, keep looking. Don\'t settle. As with all matters of the heart, you\'ll know when you find it.',
@@ -44,7 +46,7 @@ let quotes = [
 let getRandomQuote = () => {
   let randomNumber =  Math.floor( Math.random() *  quotes.length );
   return quotes[randomNumber];
-};
+};//END OF FUNCTION
 
 
 
@@ -62,7 +64,7 @@ let randomBackground = () => {
     }
     // Sets chosen color to the background
     document.body.style.backgroundColor = randomRGBValue();
-};
+};//END OF FUNCTION
 
 
 
@@ -77,21 +79,25 @@ let printQuote = () => {
     //If the random quote object has a citation property, it is added to the string.
     if (randomQuote.citation) {
       html += `<span class = "citation"> ${randomQuote.citation} </span>`
-      };
+    };
 
     //If the random quote object has a year property, it is added to the string.
     if(randomQuote.year) {
       html += `<span class = "year"> ${randomQuote.year} </span>`;
     };
 
+    //If the random quote object has a tags property, it is added to the string.
+    if (randomQuote.tags) {
+      html += `<span class = "tags"> ${randomQuote.tags} </span>`;
+    };
+
 //Adds the ending paragraph tag after adding the string up.
  html += '</p>';
-
  //Replaces the markup in the 'quote-box' div with the html string holding the quote.
  document.getElementById('quote-box').innerHTML = html;
  randomBackground();
  return html;
-};
+};//END OF FUNCTION
 
 
 
